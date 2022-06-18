@@ -4,7 +4,7 @@ import com.example.springbasics.converters.ProductConverter;
 import com.example.springbasics.dto.ProductDto;
 import com.example.springbasics.entities.Product;
 import com.example.springbasics.exceptions.ResourceNotFoundException;
-import com.example.springbasics.services.ProductService;
+import com.example.springbasics.services.interfaces.ProductService;
 import com.example.springbasics.validators.ProductValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

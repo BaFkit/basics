@@ -3,6 +3,7 @@ package com.example.springbasics.services;
 import com.example.springbasics.entities.Role;
 import com.example.springbasics.entities.User;
 import com.example.springbasics.repositories.UserRepository;
+import com.example.springbasics.services.interfaces.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,9 +19,21 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class UserService implements UserDetailsService {
+public class UserServiceImpl implements UserDetailsService, UserService {
     private final UserRepository userRepository;
 
+    @Override
+    public User save(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public Optional<User> findById(Long id) {
+        return userRepository.findById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public Optional<User> findByUsername(String username) {
         return userRepository.findByUsername(username);
     }

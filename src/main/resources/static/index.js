@@ -43,6 +43,16 @@ angular.module('app', ['ngStorage']).controller('listController', function ($sco
         }
     };
 
+    $scope.tryToRegistration = function () {
+        $http.post('http://localhost:8189/app/api/v1/users', $scope.newUser)
+            .then(function successCallback(response) {
+                alert('Registration success ' + response.data.username);
+                $scope.newUser = null;
+            }, function errorCallback(response) {
+                alert('REGISTRATION FAILED');
+            });
+    }
+
     $scope.clearUser = function () {
         delete $localStorage.springWebUser;
         $http.defaults.headers.common.Authorization = '';

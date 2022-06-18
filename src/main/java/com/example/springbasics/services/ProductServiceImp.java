@@ -5,6 +5,7 @@ import com.example.springbasics.entities.Product;
 import com.example.springbasics.exceptions.ResourceNotFoundException;
 import com.example.springbasics.repositories.ProductRepository;
 import com.example.springbasics.repositories.specifications.ProductsSpecifications;
+import com.example.springbasics.services.interfaces.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,10 +17,11 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class ProductService {
+public class ProductServiceImp implements ProductService {
 
     private final ProductRepository productRepository;
 
+    @Override
     @Transactional(readOnly = true)
     public Page<Product> findAll(Integer minCost, Integer maxCost, String titlePart, Integer page) {
         Specification<Product> spec = Specification.where(null);
@@ -35,11 +37,13 @@ public class ProductService {
         return productRepository.findAll(spec, PageRequest.of(page - 1, 10));
     }
 
+    @Override
     @Transactional
     public Product save(Product product) {
        return productRepository.save(product);
     }
 
+    @Override
     @Transactional
     public Product update(ProductDto productDto) {
         Product product = productRepository.findById(productDto.getId()).orElseThrow(() -> new ResourceNotFoundException("Unable to update product, not found in database, id: " + productDto.getId()));
@@ -48,11 +52,13 @@ public class ProductService {
         return product;
     }
 
+    @Override
     @Transactional(readOnly = true)
     public Optional<Product> getById(Long id) {
         return productRepository.findById(id);
     }
 
+    @Override
     @Transactional
     public void deleteById(Long id) {
         productRepository.deleteById(id);
