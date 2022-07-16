@@ -16,7 +16,7 @@ VALUES ('bread', 250.00),
 create table users
 (
     id         bigserial primary key,
-    username   varchar(36) not null,
+    username   varchar(36) unique not null,
     password   varchar(80) not null,
     email      varchar(50) unique,
     created_at timestamp default current_timestamp,

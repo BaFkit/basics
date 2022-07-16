@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class OrderItemDto {
-    private  Long productId;
+    private Long productId;
     private String productTitle;
     private int quantity;
     private int pricePerProduct;
@@ -25,4 +25,5 @@ public class OrderItemDto {
         this.quantity += delta;
         this.price = this.quantity * this.pricePerProduct;
     }
+
 }
