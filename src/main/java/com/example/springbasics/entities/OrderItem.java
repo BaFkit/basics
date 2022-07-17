@@ -3,8 +3,11 @@ package com.example.springbasics.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -18,26 +21,28 @@ public class OrderItem {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "product_id")
-    private Long productId;
-
-    @Column(name = "user_id")
-    private Long userId;
-
-    @Column(name = "order_id")
-    private Long orderId;
-
-    @Column(name = "quantity")
-    private int quantity;
-
-    @Column(name = "price_per_product")
-    private int pricePerProduct;
-
-    @Column(name = "price")
-    private int price;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;
 
+    @Column(name = "quantity")
+    private Integer quantity;
+
+    @Column(name = "price_per_product")
+    private Integer pricePerProduct;
+
+    @Column(name = "price")
+    private Integer price;
+
+    @CreationTimestamp
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 }

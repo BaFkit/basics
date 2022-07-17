@@ -40,6 +40,13 @@ angular.module('app', ['ngStorage']).controller('listController', function ($sco
             });
     }
 
+    $scope.loadOrders = function () {
+        $http.get('http://localhost:8189/app/api/v1/orders')
+            .then(function (response) {
+                $scope.MyOrders = response.data
+            });
+    }
+
     $scope.tryToAuth = function () {
         $http.post('http://localhost:8189/app/auth', $scope.user)
             .then(function successCallback(response) {
@@ -113,4 +120,5 @@ angular.module('app', ['ngStorage']).controller('listController', function ($sco
 
     $scope.loadProducts();
     $scope.loadCart();
+    $scope.loadOrders();
 });

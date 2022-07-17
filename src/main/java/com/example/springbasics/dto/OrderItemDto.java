@@ -1,11 +1,13 @@
 package com.example.springbasics.dto;
 
 import com.example.springbasics.entities.Product;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class OrderItemDto {
     private Long productId;
     private String productTitle;

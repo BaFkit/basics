@@ -1,9 +1,11 @@
 DROP TABLE IF EXISTS products CASCADE;
-CREATE TABLE products
+create table products
 (
-    id    bigserial PRIMARY KEY,
-    title VARCHAR(255),
-    cost  numeric(8, 2)
+    id         bigserial PRIMARY KEY,
+    title      VARCHAR(255),
+    cost       numeric(8, 2),
+    created_at timestamp default current_timestamp,
+    updated_at timestamp default current_timestamp
 );
 
 INSERT INTO products (title, cost)
@@ -17,7 +19,7 @@ create table users
 (
     id         bigserial primary key,
     username   varchar(36) unique not null,
-    password   varchar(80) not null,
+    password   varchar(80)        not null,
     email      varchar(50) unique,
     created_at timestamp default current_timestamp,
     updated_at timestamp default current_timestamp
@@ -31,10 +33,12 @@ create table roles
     updated_at timestamp default current_timestamp
 );
 
-CREATE TABLE users_roles
+create table users_roles
 (
-    user_id bigint not null references users (id),
-    role_id bigint not null references roles (id),
+    user_id    bigint not null references users (id),
+    role_id    bigint not null references roles (id),
+    created_at timestamp default current_timestamp,
+    updated_at timestamp default current_timestamp,
     primary key (user_id, role_id)
 );
 
@@ -54,18 +58,27 @@ create table orders
 (
     id          bigserial primary key,
     user_id     bigint not null references users (id),
-    total_price int not null,
+    total_price int    not null,
     address     varchar(255),
-    phone       varchar(255)
+    phone       varchar(255),
+    created_at  timestamp default current_timestamp,
+    updated_at  timestamp default current_timestamp
 );
 
 create table order_items
 (
     id                bigserial primary key,
     product_id        bigint not null references products (id),
-    user_id           bigint not null references users (id),
     order_id          bigint not null references orders (id),
-    quantity          int not null,
-    price_per_product int not null,
-    price             int not null
+    quantity          int    not null,
+    price_per_product int    not null,
+    price             int    not null,
+    created_at        timestamp default current_timestamp,
+    updated_at        timestamp default current_timestamp
 );
+
+insert into orders (user_id, total_price, address, phone) values
+(1, 200, 'address', '12345');
+
+insert into order_items (product_id, order_id, quantity, price_per_product, price) values
+(1, 1, 2, 100, 200);
