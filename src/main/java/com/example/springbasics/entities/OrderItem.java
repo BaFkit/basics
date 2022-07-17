@@ -1,6 +1,5 @@
 package com.example.springbasics.entities;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,21 +10,33 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "products")
-public class Product {
+@Table(name = "order_items")
+public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "title")
-    private String title;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
-    @Column(name = "cost")
-    private int cost;
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
+
+    @Column(name = "quantity")
+    private Integer quantity;
+
+    @Column(name = "price_per_product")
+    private Integer pricePerProduct;
+
+    @Column(name = "price")
+    private Integer price;
 
     @CreationTimestamp
     @Column(name = "created_at")
@@ -34,10 +45,4 @@ public class Product {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
-    public Product(Long id, String title, int cost) {
-        this.id = id;
-        this.title = title;
-        this.cost = cost;
-    }
 }

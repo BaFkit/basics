@@ -1,13 +1,15 @@
 package com.example.springbasics.dto;
 
 import com.example.springbasics.entities.Product;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class OrderItemDto {
-    private  Long productId;
+    private Long productId;
     private String productTitle;
     private int quantity;
     private int pricePerProduct;
@@ -25,4 +27,5 @@ public class OrderItemDto {
         this.quantity += delta;
         this.price = this.quantity * this.pricePerProduct;
     }
+
 }
