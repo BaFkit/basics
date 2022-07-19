@@ -54,6 +54,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.6.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -70,19 +79,19 @@
                     </excludes>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>7.7.1</version>
-                <configuration>
-                    <url>jdbc:postgresql://localhost:5432/products_b?currentSchema=public</url>
-                    <user>postgres</user>
-                    <password>postgres</password>
-                    <schemas>
-                        <shema>public</shema>
-                    </schemas>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.flywaydb</groupId>-->
+<!--                <artifactId>flyway-maven-plugin</artifactId>-->
+<!--                <version>7.7.1</version>-->
+<!--                <configuration>-->
+<!--                    <url>jdbc:postgresql://localhost:5432/products_b?currentSchema=public</url>-->
+<!--                    <user>postgres</user>-->
+<!--                    <password>postgres</password>-->
+<!--                    <schemas>-->
+<!--                        <shema>public</shema>-->
+<!--                    </schemas>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>
