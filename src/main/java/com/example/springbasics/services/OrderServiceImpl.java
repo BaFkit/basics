@@ -28,7 +28,8 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional
     public void createOrder(User user, OrderDetailsDto orderDetailsDto) {
-        Cart currentCart = cartService.getCurrentCart();
+        String cartKey = cartService.getCartUuidFromSuffix(user.getUsername());
+        Cart currentCart = cartService.getCurrentCart(cartKey);
         Order order = new Order();
         order.setAddress(orderDetailsDto.getAddress());
         order.setPhone(orderDetailsDto.getPhone());
@@ -46,7 +47,7 @@ public class OrderServiceImpl implements OrderService {
                 }).collect(Collectors.toList());
         order.setOrderItems(orderItems);
         orderRepository.save(order);
-        currentCart.clear();
+        cartService.clearCart(cartKey);
     }
 
     public List<Order> findOrdersByUsername(String username) {

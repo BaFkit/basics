@@ -79,19 +79,19 @@
                     </excludes>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.flywaydb</groupId>-->
-<!--                <artifactId>flyway-maven-plugin</artifactId>-->
-<!--                <version>7.7.1</version>-->
-<!--                <configuration>-->
-<!--                    <url>jdbc:postgresql://localhost:5432/products_b?currentSchema=public</url>-->
-<!--                    <user>postgres</user>-->
-<!--                    <password>postgres</password>-->
-<!--                    <schemas>-->
-<!--                        <shema>public</shema>-->
-<!--                    </schemas>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>7.7.1</version>
+                <configuration>
+                    <url>jdbc:postgresql://localhost:5432/products_b?currentSchema=public</url>
+                    <user>postgres</user>
+                    <password>postgres</password>
+                    <schemas>
+                        <shema>public</shema>
+                    </schemas>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
