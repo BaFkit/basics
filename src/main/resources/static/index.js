@@ -18,6 +18,10 @@
                 templateUrl: 'cart/cart.html',
                 controller: 'cartController'
             })
+            .when('/orders', {
+                templateUrl: 'orders/orders.html',
+                controller: 'ordersController'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -26,6 +30,12 @@
     function run($rootScope, $http, $localStorage) {
         if ($localStorage.springWebUser) {
             $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.springWebUser.token;
+        }
+        if (!$localStorage.springWebGuestCartId) {
+            $http.get('http://localhost:8189/app/api/v1/cart/generate')
+                .then(function successCallback(response) {
+                    $localStorage.springWebGuestCartId = response.data.value;
+                });
         }
     }
 })();
@@ -42,6 +52,10 @@ angular.module('market-front').controller('indexController', function ($rootScop
 
                     $scope.user.username = null;
                     $scope.user.password = null;
+
+                    $http.get('http://localhost:8189/app/api/v1/cart/' + $localStorage.springWebGuestCartId + '/merge')
+                        .then(function successCallback(response) {
+                        });
 
                     $location.path('/');
                 }

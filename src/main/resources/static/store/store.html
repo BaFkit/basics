@@ -1,49 +1,55 @@
 <div>
+    <p></p>
     <h3>Product list</h3>
-    <div class="col-9">
-        <form novalidate ng-submit="loadProducts()">
-            <input class="form-control" type="number" placeholder="min" ng-model="filter.min_cost">
-            <p></p>
-            <input class="form-control" type="number" placeholder="max" ng-model="filter.max_cost">
-            <p></p>
-            <input class="form-control" type="text" placeholder="Title" ng-model="filter.title_part">
-            <p></p>
-            <button type="submit" class="btn btn-primary">Filter</button>
-        </form>
-    </div>
-    <table class="table table-hover">
-        <tr>
-            <td>ID</td>
-            <td>Title</td>
-            <td>Cost</td>
-            <td>Actions</td>
-        </tr>
-        <tbody>
-        <tr ng-repeat="p in ProductsPage.content">
-            <td>{{p.id}}</td>
-            <td>{{p.title}}</td>
-            <td>{{p.cost}}</td>
-            <td>
-                <button class="btn btn-primary" ng-click="addToCart(p.id)">Add to cart</button>
-                <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Delete</button>
-            </td>
-        </tr>
-        </tbody>
-        <p></p>
-        <h3>My order:</h3>
+    <p></p>
+    <div class="row g-2">
+        <div class="col-6 col-md-2">
+            <form novalidate ng-submit="loadProducts()">
+                <input class="form-control" type="number" placeholder="min" ng-model="filter.min_cost">
+                <p></p>
+                <input class="form-control" type="number" placeholder="max" ng-model="filter.max_cost">
+                <p></p>
+                <input class="form-control" type="text" placeholder="Title" ng-model="filter.title_part">
+                <p></p>
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </form>
+        </div>
+
+
         <table class="table table-hover">
             <tr>
-                <td>id</td>
-                <td>Delivery address</td>
+                <td>ID</td>
+                <td>Title</td>
                 <td>Cost</td>
+                <td>Actions</td>
             </tr>
             <tbody>
-            <tr ng-repeat="order in MyOrders">
-                <td>{{order.id}}</td>
-                <td>{{order.address}}</td>
-                <td>{{order.totalPrice}}</td>
+            <tr ng-repeat="p in ProductsPage.content">
+                <td>{{p.id}}</td>
+                <td>{{p.title}}</td>
+                <td>{{p.cost}}</td>
+                <td>
+                    <button class="btn btn-primary" ng-click="addToCart(p.id)">Add to cart</button>
+                    <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Delete</button>
+                </td>
             </tr>
             </tbody>
+            <p></p>
+            <h3>My order:</h3>
+            <table class="table table-hover">
+                <tr>
+                    <td>id</td>
+                    <td>Delivery address</td>
+                    <td>Cost</td>
+                </tr>
+                <tbody>
+                <tr ng-repeat="order in MyOrders">
+                    <td>{{order.id}}</td>
+                    <td>{{order.address}}</td>
+                    <td>{{order.totalPrice}}</td>
+                </tr>
+                </tbody>
+            </table>
         </table>
-    </table>
+    </div>
 </div>
