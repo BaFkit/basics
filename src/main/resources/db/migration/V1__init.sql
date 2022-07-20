@@ -13,6 +13,14 @@ VALUES ('bread', 250.00),
        ('Milk', 80.00),
        ('Orange', 120.00),
        ('Butter', 50.00),
+       ('Salt', 5.00),
+       ('Сarrot', 30.00),
+       ('Grape', 75.00),
+       ('Sauce', 55.00),
+       ('Cabbage', 33.00),
+       ('Strawberry', 135.00),
+       ('Wine', 150.00),
+       ('Juice', 40.00),
        ('Banana', 60.00);
 
 create table users

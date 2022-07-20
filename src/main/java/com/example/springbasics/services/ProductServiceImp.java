@@ -34,7 +34,7 @@ public class ProductServiceImp implements ProductService {
         if (titlePart != null) {
             spec = spec.and(ProductsSpecifications.titleLike(titlePart));
         }
-        return productRepository.findAll(spec, PageRequest.of(page - 1, 10));
+        return productRepository.findAll(spec, PageRequest.of(page - 1, 7));
     }
 
     @Override
