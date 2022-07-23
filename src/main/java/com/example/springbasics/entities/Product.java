@@ -1,7 +1,5 @@
 package com.example.springbasics.entities;
 
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -26,6 +24,10 @@ public class Product {
 
     @Column(name = "cost")
     private int cost;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     @CreationTimestamp
     @Column(name = "created_at")
