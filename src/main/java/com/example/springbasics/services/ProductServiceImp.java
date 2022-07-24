@@ -23,13 +23,16 @@ public class ProductServiceImp implements ProductService {
 
     @Override
     @Transactional(readOnly = true)
-    public Page<Product> findAll(Integer minCost, Integer maxCost, String titlePart, Integer page) {
+    public Page<Product> findAll(Integer minCost, Integer maxCost, String titlePart, Long categoryId, Integer page) {
         Specification<Product> spec = Specification.where(null);
         if (minCost != null) {
             spec = spec.and(ProductsSpecifications.costGreaterOrEqualsThan(minCost));
         }
         if (maxCost != null) {
             spec = spec.and(ProductsSpecifications.costLessOrEqualsThan(maxCost));
+        }
+        if (categoryId != null) {
+            spec = spec.and(ProductsSpecifications.equalCategory(categoryId));
         }
         if (titlePart != null) {
             spec = spec.and(ProductsSpecifications.titleLike(titlePart));

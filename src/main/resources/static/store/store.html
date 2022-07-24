@@ -24,6 +24,16 @@
                     <label for="filterMaxPrice">Max. price</label>
                 </div>
                 <p></p>
+                <div>
+                    <select class="form-select" id="filterCategory" ng-model="filter.category" aria-label="Choose a category">
+                        <option value="">All Category</option>
+                        <option value="1">Grocery</option>
+                        <option value="2">Beverages</option>
+                        <option value="3">Fruits</option>
+                        <option value="4">Vegetables</option>
+                    </select>
+                </div>
+                <p></p>
                 <button class="btn btn-outline-warning btn-sm" style="width: 100%;" type="submit">Filter</button>
             </form>
         </div>

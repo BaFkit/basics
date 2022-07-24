@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface ProductService {
 
-    Page<Product> findAll(Integer minCost, Integer maxCost, String titlePart, Integer page);
+    Page<Product> findAll(Integer minCost, Integer maxCost, String titlePart,  Long categoryId, Integer page);
 
     Product save(Product product);
 
