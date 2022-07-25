@@ -1,6 +1,5 @@
 package com.example.springbasics.endpoints;
 
-import com.example.springbasics.converters.ProductConverter;
 import com.example.springbasics.converters.ProductConverterWS;
 import com.example.springbasics.services.interfaces.ProductService;
 import com.example.springbasics.soap.products.GetAllProductsRequest;
@@ -14,7 +13,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 @Endpoint
 @RequiredArgsConstructor
 public class ProductEndpoint {
-    private static final String NAMESPACE_URI = "http://www.example.com/springbasic/products";
+    private static final String NAMESPACE_URI = "http://www.example.com/springbasics/products";
     private final ProductService productService;
     private final ProductConverterWS productConverterWS;
 
