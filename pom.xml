@@ -125,8 +125,7 @@
                 </executions>
                 <configuration>
                     <sources>
-                        <source>${project.basedir}</source>
-                        <source>${project.basedir}</source>
+                        <source>${project.basedir}/src/main/resources/products.xsd</source>
                     </sources>
                 </configuration>
             </plugin>
