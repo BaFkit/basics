@@ -4,9 +4,11 @@ import com.example.springbasics.dto.ProductDto;
 import com.example.springbasics.entities.Product;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ProductService {
+    List<Product> getAll();
 
     Page<Product> findAll(Integer minCost, Integer maxCost, String titlePart,  Long categoryId, Integer page);
 

@@ -17,6 +17,6 @@ public class ProductsSpecifications {
     }
 
     public static Specification<Product> equalCategory(Long categoryId) {
-        return (Specification<Product>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.equal(root.get("category"), categoryId);
+        return (Specification<Product>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.equal(root.get("category").get("id"), categoryId);
     }
 }
