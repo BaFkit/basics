@@ -1,11 +1,10 @@
-package com.example.springbasics.core.controllers;
+package com.example.springbasics.auth.controllers;
 
-import com.example.springbasics.core.converters.UserConverter;
-import com.example.springbasics.core.exceptions.ResourceNotFoundException;
-import com.example.springbasics.core.services.interfaces.UserService;
-import com.example.springbasics.core.dto.UserDto;
-import com.example.springbasics.core.entities.User;
-import com.example.springbasics.core.validators.UserValidator;
+import com.example.springbasics.auth.converters.UserConverter;
+import com.example.springbasics.auth.dto.UserDto;
+import com.example.springbasics.auth.entities.User;
+import com.example.springbasics.auth.exceptions.ResourceNotFoundException;
+import com.example.springbasics.auth.services.interfaces.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,13 +15,11 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserService userService;
-    private final UserValidator userValidator;
     private final UserConverter userConverter;
 
     @PostMapping
     public UserDto saveNewUser(@RequestBody UserDto userDto) {
         System.out.println(userDto);
-        userValidator.validate(userDto);
         User user = userConverter.dtoToEntity(userDto);
         user = userService.save(user);
         return userConverter.entityToDto(user);

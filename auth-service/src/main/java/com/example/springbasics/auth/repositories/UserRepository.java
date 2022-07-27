@@ -1,6 +1,6 @@
-package com.example.springbasics.core.repositories;
+package com.example.springbasics.auth.repositories;
 
-import com.example.springbasics.core.entities.User;
+import com.example.springbasics.auth.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

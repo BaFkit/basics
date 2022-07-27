@@ -1,10 +1,10 @@
-package com.example.springbasics.core.controllers;
+package com.example.springbasics.auth.controllers;
 
-import com.example.springbasics.core.dto.JwtRequest;
-import com.example.springbasics.core.exceptions.AppError;
-import com.example.springbasics.core.services.UserServiceImpl;
-import com.example.springbasics.core.utils.JwtTokenUtil;
-import com.example.springbasics.core.dto.JwtResponse;
+import com.example.springbasics.auth.dto.JwtRequest;
+import com.example.springbasics.auth.dto.JwtResponse;
+import com.example.springbasics.auth.exceptions.AppError;
+import com.example.springbasics.auth.services.interfaces.UserService;
+import com.example.springbasics.auth.utils.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class AuthController {
-    private final UserServiceImpl userServiceImpl;
+    private final UserService userService;
     private final JwtTokenUtil jwtTokenUtil;
     private final AuthenticationManager authenticationManager;
 
@@ -30,7 +30,7 @@ public class AuthController {
         } catch (BadCredentialsException e) {
             return new ResponseEntity<>(new AppError(HttpStatus.UNAUTHORIZED.value(), "Incorrect username or password"), HttpStatus.UNAUTHORIZED);
         }
-        UserDetails userDetails = userServiceImpl.loadUserByUsername(authRequest.getUsername());
+        UserDetails userDetails = userService.loadUserByUsername(authRequest.getUsername());
         String token = jwtTokenUtil.generateToken(userDetails);
         return ResponseEntity.ok(new JwtResponse(token));
     }

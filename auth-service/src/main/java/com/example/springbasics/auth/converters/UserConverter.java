@@ -1,7 +1,7 @@
-package com.example.springbasics.core.converters;
+package com.example.springbasics.auth.converters;
 
-import com.example.springbasics.core.dto.UserDto;
-import com.example.springbasics.core.entities.User;
+import com.example.springbasics.auth.dto.UserDto;
+import com.example.springbasics.auth.entities.User;
 import org.springframework.stereotype.Component;
 
 @Component

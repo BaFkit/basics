@@ -1,4 +1,4 @@
-package com.example.springbasics.core.entities;
+package com.example.springbasics.auth.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

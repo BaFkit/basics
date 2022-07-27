@@ -1,5 +1,5 @@
 angular.module('market-front').controller('welcomeController', function ($scope, $http) {
-    const contextPath = 'http://localhost:8189/app/';
+    const contextPath = 'http://localhost:5555/core/';
 
     $scope.tryToRegistration = function () {
         $http.post(contextPath + 'api/v1/users', $scope.newUser)

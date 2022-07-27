@@ -1,0 +1,25 @@
+server:
+  port: 8189
+  servlet:
+    context-path: /web-market-core
+utils:
+  cart:
+    prefix: SPRING_WEB_
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/products_b
+    postgres:
+      console:
+        enable: true
+        settings:
+          web-allow-others: false
+
+jwt:
+  secret: h4f8093h4f983yhrt9834hr0934hf0hf493g493gf438rh438th34g

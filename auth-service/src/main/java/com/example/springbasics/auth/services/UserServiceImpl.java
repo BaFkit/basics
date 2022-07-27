@@ -1,9 +1,9 @@
-package com.example.springbasics.core.services;
+package com.example.springbasics.auth.services;
 
-import com.example.springbasics.core.repositories.UserRepository;
-import com.example.springbasics.core.services.interfaces.UserService;
-import com.example.springbasics.core.entities.Role;
-import com.example.springbasics.core.entities.User;
+import com.example.springbasics.auth.entities.Role;
+import com.example.springbasics.auth.entities.User;
+import com.example.springbasics.auth.repositories.UserRepository;
+import com.example.springbasics.auth.services.interfaces.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
