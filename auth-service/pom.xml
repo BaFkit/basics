@@ -65,9 +65,9 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>7.7.1</version>
                 <configuration>
-                    <url>jdbc:postgresql://localhost:5432/products_b?currentSchema=public</url>
-                    <user>postgres</user>
-                    <password>postgres</password>
+                    <url>jdbc:postgresql://localhost:5433/products_b?currentSchema=public</url>
+                    <user>postgres2</user>
+                    <password>postgres2</password>
                     <schemas>
                         <shema>public</shema>
                     </schemas>
