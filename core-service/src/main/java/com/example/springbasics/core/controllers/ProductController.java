@@ -1,7 +1,7 @@
 package com.example.springbasics.core.controllers;
 
+import com.example.springbasics.api.exceptions.ResourceNotFoundException;
 import com.example.springbasics.core.converters.ProductConverter;
-import com.example.springbasics.core.exceptions.ResourceNotFoundException;
 import com.example.springbasics.core.services.interfaces.ProductService;
 import com.example.springbasics.core.validators.ProductValidator;
 import com.example.springbasics.core.dto.ProductDto;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
-@CrossOrigin("http://localhost:5555")
 public class ProductController {
 
     private final ProductService productService;

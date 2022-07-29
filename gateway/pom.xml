@@ -11,10 +11,10 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.geekbrains.web</groupId>
+    <groupId>com.example</groupId>
     <artifactId>gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
+    <name>gateway</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
