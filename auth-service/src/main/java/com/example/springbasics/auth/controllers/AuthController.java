@@ -1,8 +1,8 @@
 package com.example.springbasics.auth.controllers;
 
+import com.example.springbasics.api.exceptions.AppError;
 import com.example.springbasics.auth.dto.JwtRequest;
 import com.example.springbasics.auth.dto.JwtResponse;
-import com.example.springbasics.auth.exceptions.AppError;
 import com.example.springbasics.auth.services.interfaces.UserService;
 import com.example.springbasics.auth.utils.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;

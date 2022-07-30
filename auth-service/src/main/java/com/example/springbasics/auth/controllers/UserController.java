@@ -1,9 +1,8 @@
 package com.example.springbasics.auth.controllers;
-
+import com.example.springbasics.api.exceptions.ResourceNotFoundException;
 import com.example.springbasics.auth.converters.UserConverter;
 import com.example.springbasics.auth.dto.UserDto;
 import com.example.springbasics.auth.entities.User;
-import com.example.springbasics.auth.exceptions.ResourceNotFoundException;
 import com.example.springbasics.auth.services.interfaces.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

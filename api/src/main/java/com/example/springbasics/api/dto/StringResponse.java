@@ -1,4 +1,4 @@
-package com.example.springbasics.core.dto;
+package com.example.springbasics.api.dto;
 
 public class StringResponse {
     private String value;

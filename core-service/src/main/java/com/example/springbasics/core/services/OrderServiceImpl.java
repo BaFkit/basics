@@ -1,8 +1,7 @@
 package com.example.springbasics.core.services;
 
+import com.example.springbasics.api.exceptions.ResourceNotFoundException;
 import com.example.springbasics.core.dto.OrderDetailsDto;
-import com.example.springbasics.core.entities.User;
-import com.example.springbasics.core.exceptions.ResourceNotFoundException;
 import com.example.springbasics.core.repositories.OrderRepository;
 import com.example.springbasics.core.services.interfaces.OrderService;
 import com.example.springbasics.core.services.interfaces.ProductService;
@@ -27,13 +26,13 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional
-    public void createOrder(User user, OrderDetailsDto orderDetailsDto) {
-        String cartKey = cartService.getCartUuidFromSuffix(user.getUsername());
+    public void createOrder(String username, OrderDetailsDto orderDetailsDto) {
+        String cartKey = cartService.getCartUuidFromSuffix(username);
         Cart currentCart = cartService.getCurrentCart(cartKey);
         Order order = new Order();
         order.setAddress(orderDetailsDto.getAddress());
         order.setPhone(orderDetailsDto.getPhone());
-        order.setUser(user);
+        order.setUsername(username);
         order.setTotalPrice(currentCart.getTotalPrice());
         List<OrderItem> orderItems = currentCart.getItems().stream()
                 .map(o -> {

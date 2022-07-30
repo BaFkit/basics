@@ -1,10 +1,7 @@
 server:
-  port: 8189
+  port: 8188
   servlet:
-    context-path: /web-market-core
-utils:
-  cart:
-    prefix: SPRING_WEB_
+    context-path: /web-market-auth
 spring:
   jpa:
     hibernate:
@@ -23,3 +20,4 @@ spring:
 
 jwt:
   secret: h4f8093h4f983yhrt9834hr0934hf0hf493g493gf438rh438th34g
+  lifetime: 36000000

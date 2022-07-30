@@ -1,6 +1,6 @@
 package com.example.springbasics.core.services;
 
-import com.example.springbasics.core.exceptions.ResourceNotFoundException;
+import com.example.springbasics.api.exceptions.ResourceNotFoundException;
 import com.example.springbasics.core.repositories.ProductRepository;
 import com.example.springbasics.core.services.interfaces.ProductService;
 import com.example.springbasics.core.dto.ProductDto;

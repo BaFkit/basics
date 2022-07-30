@@ -1,5 +1,7 @@
 package com.example.springbasics.core.exceptions;
 
+import com.example.springbasics.api.exceptions.AppError;
+import com.example.springbasics.api.exceptions.ResourceNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
