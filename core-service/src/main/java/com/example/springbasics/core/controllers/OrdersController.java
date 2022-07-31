@@ -1,6 +1,5 @@
 package com.example.springbasics.core.controllers;
 
-import com.example.springbasics.api.exceptions.ResourceNotFoundException;
 import com.example.springbasics.core.converters.OrderConverter;
 import com.example.springbasics.core.dto.OrderDetailsDto;
 import com.example.springbasics.core.dto.OrderDto;

@@ -1,7 +1,7 @@
-package com.example.springbasics.core.services;
+package com.example.springbasics.cart.service;
 
 import com.example.springbasics.api.exceptions.ResourceNotFoundException;
-import com.example.springbasics.core.dto.Cart;
+import com.example.springbasics.cart.dto.Cart;
 import com.example.springbasics.core.services.interfaces.ProductService;
 import com.example.springbasics.core.entities.Product;
 import lombok.RequiredArgsConstructor;

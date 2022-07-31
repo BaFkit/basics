@@ -1,7 +1,7 @@
 package com.example.springbasics.core.converters;
 
 import com.example.springbasics.core.entities.Product;
-import com.example.springbasics.core.products.ProductWS;
+import com.example.springbasics.core.soap.products.ProductWS;
 import org.springframework.stereotype.Component;
 
 @Component

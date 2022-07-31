@@ -6,7 +6,7 @@
 //
 
 
-package com.example.springbasics.core.products;
+package com.example.springbasics.core.soap.products;
 
 import java.util.ArrayList;
 import java.util.List;

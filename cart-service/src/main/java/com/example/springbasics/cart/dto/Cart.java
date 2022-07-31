@@ -1,5 +1,6 @@
-package com.example.springbasics.core.dto;
+package com.example.springbasics.cart.dto;
 
+import com.example.springbasics.core.dto.OrderItemDto;
 import com.example.springbasics.core.entities.Product;
 import lombok.Data;
 

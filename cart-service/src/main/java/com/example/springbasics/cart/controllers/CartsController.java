@@ -1,10 +1,9 @@
-package com.example.springbasics.core.controllers;
-
+package com.example.springbasics.cart.controllers;
 
 import com.example.springbasics.api.dto.StringResponse;
-import com.example.springbasics.core.dto.Cart;
+import com.example.springbasics.cart.dto.Cart;
+import com.example.springbasics.cart.service.CartService;
 import com.example.springbasics.core.services.interfaces.ProductService;
-import com.example.springbasics.core.services.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
