@@ -1,0 +1,12 @@
+server:
+  port: 8190
+  servlet:
+    context-path: /web-market-cart
+utils:
+  cart:
+    prefix: SPRING_WEB_
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

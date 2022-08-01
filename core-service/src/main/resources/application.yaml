@@ -2,9 +2,6 @@ server:
   port: 8189
   servlet:
     context-path: /web-market-core
-utils:
-  cart:
-    prefix: SPRING_WEB_
 spring:
   jpa:
     hibernate:

@@ -6,7 +6,7 @@
 //
 
 
-package com.example.springbasics.core.products;
+package com.example.springbasics.core.soap.products;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

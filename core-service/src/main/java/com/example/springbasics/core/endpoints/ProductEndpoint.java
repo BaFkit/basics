@@ -2,8 +2,8 @@ package com.example.springbasics.core.endpoints;
 
 import com.example.springbasics.core.services.interfaces.ProductService;
 import com.example.springbasics.core.converters.ProductConverterWS;
-import com.example.springbasics.core.products.GetAllProductsRequest;
-import com.example.springbasics.core.products.GetAllProductsResponse;
+import com.example.springbasics.core.soap.products.GetAllProductsRequest;
+import com.example.springbasics.core.soap.products.GetAllProductsResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
