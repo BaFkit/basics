@@ -1,4 +1,4 @@
-package com.example.springbasics.cart.config;
+package com.example.springbasics.cart.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
