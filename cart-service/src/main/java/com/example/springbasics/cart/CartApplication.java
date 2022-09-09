@@ -1,13 +1,12 @@
-package com.example.springbasics.core;
+package com.example.springbasics.cart;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBasicsApplication {
-
+public class CartApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringBasicsApplication.class, args);
+        SpringApplication.run(CartApplication.class, args);
     }
-
 }
+

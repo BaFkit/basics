@@ -1,6 +1,6 @@
 package com.example.springbasics.core.converters;
 
-import com.example.springbasics.core.dto.OrderDto;
+import com.example.springbasics.api.core.OrderDto;
 import com.example.springbasics.core.entities.Order;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -23,7 +23,7 @@ public class OrderConverter {
         out.setAddress(order.getAddress());
         out.setPhone(order.getPhone());
         out.setTotalPrice(order.getTotalPrice());
-        out.setUserName(order.getUsername());
+        out.setUsername(order.getUsername());
         out.setItems(order.getOrderItems().stream().map(orderItemConverter::entityToDto).collect(Collectors.toList()));
         return out;
     }

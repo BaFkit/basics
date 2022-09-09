@@ -1,5 +1,5 @@
 package com.example.springbasics.core.converters;
-import com.example.springbasics.core.dto.OrderItemDto;
+import com.example.springbasics.api.core.OrderItemDto;
 import com.example.springbasics.core.entities.OrderItem;
 import org.springframework.stereotype.Component;
 

@@ -1,9 +1,9 @@
 package com.example.springbasics.core.services;
 
+import com.example.springbasics.api.core.ProductDto;
 import com.example.springbasics.api.exceptions.ResourceNotFoundException;
 import com.example.springbasics.core.repositories.ProductRepository;
 import com.example.springbasics.core.services.interfaces.ProductService;
-import com.example.springbasics.core.dto.ProductDto;
 import com.example.springbasics.core.entities.Product;
 import com.example.springbasics.core.repositories.specifications.ProductsSpecifications;
 import lombok.RequiredArgsConstructor;
@@ -56,7 +56,7 @@ public class ProductServiceImp implements ProductService {
     public Product update(ProductDto productDto) {
         Product product = productRepository.findById(productDto.getId()).orElseThrow(() -> new ResourceNotFoundException("Unable to update product, not found in database, id: " + productDto.getId()));
         product.setTitle(productDto.getTitle());
-        product.setCost(productDto.getCost());
+        product.setCost(productDto.getPrice());
         return product;
     }
 

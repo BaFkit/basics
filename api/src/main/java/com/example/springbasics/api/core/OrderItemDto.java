@@ -1,6 +1,6 @@
-package com.example.springbasics.api.carts;
+package com.example.springbasics.api.core;
 
-public class CartItemDto {
+public class OrderItemDto {
     private Long productId;
     private String productTitle;
     private int quantity;
@@ -47,10 +47,10 @@ public class CartItemDto {
         this.price = price;
     }
 
-    public CartItemDto() {
+    public OrderItemDto() {
     }
 
-    public CartItemDto(Long productId, String productTitle, int quantity, int pricePerProduct, int price) {
+    public OrderItemDto(Long productId, String productTitle, int quantity, int pricePerProduct, int price) {
         this.productId = productId;
         this.productTitle = productTitle;
         this.quantity = quantity;
@@ -58,3 +58,4 @@ public class CartItemDto {
         this.price = price;
     }
 }
+

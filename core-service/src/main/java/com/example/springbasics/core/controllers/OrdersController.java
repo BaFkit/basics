@@ -1,8 +1,8 @@
 package com.example.springbasics.core.controllers;
 
+import com.example.springbasics.api.core.OrderDetailsDto;
+import com.example.springbasics.api.core.OrderDto;
 import com.example.springbasics.core.converters.OrderConverter;
-import com.example.springbasics.core.dto.OrderDetailsDto;
-import com.example.springbasics.core.dto.OrderDto;
 import com.example.springbasics.core.services.interfaces.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

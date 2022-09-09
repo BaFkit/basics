@@ -1,11 +1,13 @@
- package com.example.springbasics.gateway;
+package com.example.springbasics.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GatewayApp {
+public class AuthServiceApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(GatewayApp.class, args);
+        SpringApplication.run(AuthServiceApplication.class, args);
     }
+
 }

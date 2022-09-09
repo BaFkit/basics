@@ -1,9 +1,9 @@
-package com.example.springbasics.cart.service;
+package com.example.springbasics.cart.services;
 
+import com.example.springbasics.api.core.ProductDto;
 import com.example.springbasics.api.exceptions.ResourceNotFoundException;
-import com.example.springbasics.cart.dto.Cart;
-import com.example.springbasics.core.services.interfaces.ProductService;
-import com.example.springbasics.core.entities.Product;
+import com.example.springbasics.cart.integrations.ProductsServiceIntegration;
+import com.example.springbasics.cart.models.Cart;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 @RequiredArgsConstructor
 public class CartService {
 
-    private final ProductService productService;
+    private final ProductsServiceIntegration productsServiceIntegration;
     private final RedisTemplate<String, Object> redisTemplate;
 
     @Value("${utils.cart.prefix}")
@@ -38,9 +38,9 @@ public class CartService {
     }
 
     public void addToCart(String cartKey, Long productId) {
-        Product product = productService.getById(productId).orElseThrow(() -> new ResourceNotFoundException("Unable to add product to cart. Product not found, id: " + productId));
+        ProductDto productDto = productsServiceIntegration.findById(productId).orElseThrow(() -> new ResourceNotFoundException("Unable to add product to cart. Product not found, id: " + productId));
         execute(cartKey, c -> {
-            c.add(product);
+            c.add(productDto);
         });
     }
 

@@ -1,13 +1,13 @@
-package com.example.springbasics.auth;
+package com.example.springbasics.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WebAuthServiceApplication {
+public class SpringBasicsCoreApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebAuthServiceApplication.class, args);
+        SpringApplication.run(SpringBasicsCoreApplication.class, args);
     }
 
 }

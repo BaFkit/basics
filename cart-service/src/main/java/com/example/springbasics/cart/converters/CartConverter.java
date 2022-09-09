@@ -1,8 +1,8 @@
 package com.example.springbasics.cart.converters;
 
-import com.example.springbasics.api.carts.CartDto;
-import com.example.springbasics.api.carts.CartItemDto;
-import models.Cart;
+import com.example.springbasics.api.cart.CartDto;
+import com.example.springbasics.api.cart.CartItemDto;
+import com.example.springbasics.cart.models.Cart;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

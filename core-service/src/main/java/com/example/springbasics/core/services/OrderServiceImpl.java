@@ -1,14 +1,14 @@
 package com.example.springbasics.core.services;
 
+import com.example.springbasics.api.cart.CartDto;
+import com.example.springbasics.api.core.OrderDetailsDto;
 import com.example.springbasics.api.exceptions.ResourceNotFoundException;
-import com.example.springbasics.cart.dto.Cart;
-import com.example.springbasics.cart.service.CartService;
-import com.example.springbasics.core.dto.OrderDetailsDto;
+import com.example.springbasics.core.entities.Order;
+import com.example.springbasics.core.entities.OrderItem;
+import com.example.springbasics.core.integrations.CartServiceIntegration;
 import com.example.springbasics.core.repositories.OrderRepository;
 import com.example.springbasics.core.services.interfaces.OrderService;
 import com.example.springbasics.core.services.interfaces.ProductService;
-import com.example.springbasics.core.entities.Order;
-import com.example.springbasics.core.entities.OrderItem;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,14 +22,13 @@ import java.util.stream.Collectors;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
-    private final CartService cartService;
+    private final CartServiceIntegration cartServiceIntegration;
     private final ProductService productService;
 
     @Override
     @Transactional
     public void createOrder(String username, OrderDetailsDto orderDetailsDto) {
-        String cartKey = cartService.getCartUuidFromSuffix(username);
-        Cart currentCart = cartService.getCurrentCart(cartKey);
+        CartDto currentCart = cartServiceIntegration.getUserCart(username);
         Order order = new Order();
         order.setAddress(orderDetailsDto.getAddress());
         order.setPhone(orderDetailsDto.getPhone());
@@ -47,7 +46,7 @@ public class OrderServiceImpl implements OrderService {
                 }).collect(Collectors.toList());
         order.setOrderItems(orderItems);
         orderRepository.save(order);
-        cartService.clearCart(cartKey);
+        cartServiceIntegration.clearUserCart(username);
     }
 
     public List<Order> findOrdersByUsername(String username) {
