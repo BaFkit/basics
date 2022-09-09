@@ -1,6 +1,6 @@
 package com.example.springbasics.core.services.interfaces;
 
-import com.example.springbasics.core.dto.ProductDto;
+import com.example.springbasics.api.core.ProductDto;
 import com.example.springbasics.core.entities.Product;
 import org.springframework.data.domain.Page;
 

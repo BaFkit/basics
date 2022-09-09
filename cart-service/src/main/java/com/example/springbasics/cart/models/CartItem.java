@@ -1,6 +1,6 @@
-package models;
+package com.example.springbasics.cart.models;
 
-import com.example.springbasics.core.dto.ProductDto;
+import com.example.springbasics.api.core.ProductDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

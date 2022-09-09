@@ -1,9 +1,7 @@
-package com.example.springbasics.core.exceptions;
+package com.example.springbasics.cart.exceptions;
 
 import com.example.springbasics.api.exceptions.AppError;
-import com.example.springbasics.api.exceptions.FieldsValidationError;
 import com.example.springbasics.api.exceptions.ResourceNotFoundException;
-import com.example.springbasics.api.exceptions.ValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,11 +15,5 @@ public class GlobalExceptionHandler {
     public ResponseEntity<AppError> catchResourceNotFoundException(ResourceNotFoundException e) {
         log.error(e.getMessage(), e);
         return new ResponseEntity<>(new AppError(HttpStatus.NOT_FOUND.value(), e.getMessage()), HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler
-    public ResponseEntity<FieldsValidationError> catchValidationException(ValidationException e) {
-        log.error(e.getMessage(), e);
-        return new ResponseEntity<>(new FieldsValidationError(e.getErrorFieldsMessages()), HttpStatus.BAD_REQUEST);
     }
 }

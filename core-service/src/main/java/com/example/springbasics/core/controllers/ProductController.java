@@ -1,10 +1,10 @@
 package com.example.springbasics.core.controllers;
 
+import com.example.springbasics.api.core.ProductDto;
 import com.example.springbasics.api.exceptions.ResourceNotFoundException;
 import com.example.springbasics.core.converters.ProductConverter;
 import com.example.springbasics.core.services.interfaces.ProductService;
 import com.example.springbasics.core.validators.ProductValidator;
-import com.example.springbasics.core.dto.ProductDto;
 import com.example.springbasics.core.entities.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

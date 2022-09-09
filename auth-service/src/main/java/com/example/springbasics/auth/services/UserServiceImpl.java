@@ -28,7 +28,6 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     @Transactional
     public User save(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        // add user existence check
         return userRepository.save(user);
     }
 

@@ -32,14 +32,14 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.flywaydb</groupId>-->
-<!--            <artifactId>flyway-core</artifactId>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>api</artifactId>
@@ -48,25 +48,21 @@
         </dependency>
     </dependencies>
 
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.flywaydb</groupId>-->
-<!--                <artifactId>flyway-maven-plugin</artifactId>-->
-<!--                <version>7.7.1</version>-->
-<!--                <configuration>-->
-<!--                    <url>jdbc:postgresql://localhost:5433/products_b?currentSchema=public</url>-->
-<!--                    <user>postgres</user>-->
-<!--                    <password>postgres</password>-->
-<!--                    <schemas>-->
-<!--                        <shema>public</shema>-->
-<!--                    </schemas>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>7.7.1</version>
+                <configuration>
+                    <url>jdbc:postgresql://localhost:5433/products_b?currentSchema=public</url>
+                    <user>postgres</user>
+                    <password>postgres</password>
+                    <schemas>
+                        <shema>public</shema>
+                    </schemas>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

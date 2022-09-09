@@ -1,6 +1,6 @@
-package models;
+package com.example.springbasics.cart.models;
 
-import com.example.springbasics.core.dto.ProductDto;
+import com.example.springbasics.api.core.ProductDto;
 import lombok.Data;
 
 import java.util.ArrayList;

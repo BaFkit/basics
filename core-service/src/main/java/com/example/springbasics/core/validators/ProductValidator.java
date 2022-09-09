@@ -1,7 +1,7 @@
 package com.example.springbasics.core.validators;
 
-import com.example.springbasics.core.dto.ProductDto;
-import com.example.springbasics.core.exceptions.ValidationException;
+import com.example.springbasics.api.core.ProductDto;
+import com.example.springbasics.api.exceptions.ValidationException;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.List;
 public class ProductValidator {
     public void validate(ProductDto productDto) {
         List<String> errors = new ArrayList<>();
-        if (productDto.getCost() < 1) {
+        if (productDto.getPrice() < 1) {
             errors.add("Price cannot be less than 1");
         }
         if (productDto.getTitle().isBlank()) {

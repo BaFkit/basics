@@ -1,4 +1,4 @@
-package com.example.springbasics.api.carts;
+package com.example.springbasics.api.cart;
 
 import java.util.List;
 
